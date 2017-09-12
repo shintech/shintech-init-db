@@ -2,7 +2,7 @@ import promise from 'bluebird'
 import pg from 'pg-promise'
 
 export default function initDB (options) {
-  const {environment, config} = options
+  const {environment, config, logger} = options
 
   const pgOptions = {
     promiseLib: promise
@@ -14,7 +14,7 @@ export default function initDB (options) {
   const databaseName = connectionString.split('/')
 
   if (environment === 'development') {
-    console.log('Connected to database: ' + databaseName[databaseName.length - 1])
+    logger.info(`Connected to database: ${databaseName[databaseName.length - 1]}`)
   }
 
   return init
