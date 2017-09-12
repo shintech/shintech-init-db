@@ -1,5 +1,6 @@
 import promise from 'bluebird'
 import pg from 'pg-promise'
+import chalk from 'chalk'
 
 export default function initDB (options) {
   const {environment, config, logger} = options
@@ -14,7 +15,7 @@ export default function initDB (options) {
   const databaseName = connectionString.split('/')
 
   if (environment === 'development') {
-    logger.info(`Connected to database: ${databaseName[databaseName.length - 1]}`)
+    logger.info(`Connected to database: ${chalk.bgBlack.green(databaseName[databaseName.length - 1])}`)
   }
 
   return init

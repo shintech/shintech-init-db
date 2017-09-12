@@ -1,6 +1,6 @@
 {
   "name": "shintech-init-db",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "init db",
   "main": "build/index.js",
   "repository": "https://github.com/shintech/shintech-init-db.git",
